@@ -1,3 +1,4 @@
+addEventListener("DOMContentLoaded", (e) => {
 const item = document.querySelector(".new-nav");
 const mask = document.querySelector(".Body");
 
