@@ -44,26 +44,26 @@ document.addEventListener("DOMContentLoaded", () => {
     .addLabel("nav-loaded") // QA Fix: Standardized to a single label
 
     .from('#about-us_btn', {
-        duration: 0.3,
+        duration: 0.5,
         xPercent: -50,
         opacity: 0
     })
 
     .from('#how-we-work_btn', {
         opacity: 0
-    }, "<0.1") // QA Suggestion: Consistent, easy-to-read offset
+    }, ">0.1") // QA Suggestion: Consistent, easy-to-read offset
 
     .from('#gallery_btn', {
         opacity: 0
-    }, "<0.1")
+    }, ">0.1")
 
     .from('#work-with-us_btn', {
         opacity: 0
-    }, "<0.1")
+    }, ">0.1")
 
     .from('#contact_btn', {
         opacity: 0
-    }, "<0.1")
+    }, ">0.1")
 
     .addPause()
 
@@ -99,14 +99,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }) 
 */
     .to(".main-nav__block", {
-        duration: .3,
+        duration: 0.5,
         xPercent: -80,
         ease: 'ease.out',
         autoAlpha: 0
     })
 
     .from(".sub-nav__block", {
-        duration: .3,
+        duration: 0.5,
         xPercent: -80,
         ease: 'ease.out',
         opacity: 0
