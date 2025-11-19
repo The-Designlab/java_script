@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1. Element selection (QA Check: Ensure these selectors exist in your HTML)
     const openBtn = document.querySelector(".open-menu_btn");
     const closeBtn = document.querySelector(".close-menu_btn");
-    const expertiseBtn = document.querySelector('#expertise_btn');
-    const expertiseBackBtn = document.querySelector('#exp-back_btn');
     const workBtn = document.querySelector('#work-with-us_btn');
     const workBackBtn = document.querySelector('#work-back_btn');
     const subnavItem = document.querySelector('#sub-nav_item');
@@ -51,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         opacity: 0
     })
 
-    .from('#expertise_btn', {
+    .from('#how-we-work_btn', {
         opacity: 0
     }, "<0.1") // QA Suggestion: Consistent, easy-to-read offset
 
@@ -69,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     .addPause()
 
-    // --- Subnav (Expertise) Animation ---
+/*    // --- Subnav (Expertise) Animation ---
 
     .addLabel("expertise")
 
@@ -88,25 +86,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }, "-=0.2")
 
     .addPause()
-
+*/
+        
     // --- Subnav (Work with) Animation ---
 
     .addLabel("work-with")
 
-    // QA Fix: Ensure duration is 0 for immediate hiding, prevents unclickable state
+/*    // QA Fix: Ensure duration is 0 for immediate hiding, prevents unclickable state
     .to(".exp-nav-btn__list", {
         duration: 0,
         visibility: "hidden" 
     }) 
-
-    .to(".main-nav_block", {
+*/
+    .to(".main-nav__block", {
         duration: .3,
         xPercent: -80,
         ease: 'ease.out',
         autoAlpha: 0
     })
 
-    .from(".with-nav-btn__list", {
+    .from(".sub-nav__block", {
         duration: .3,
         xPercent: -80,
         ease: 'ease.out',
@@ -138,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
             tl.reverse();
         });
     }
-
+/*
     // Expertise Sub-Menu
     if (expertiseBtn) {
         expertiseBtn.addEventListener("mouseup", function () {
@@ -153,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
             tl.play("nav-loaded");
         });
     }
-
+*/
     // Work With Us Sub-Menu
     if (workBtn) {
         workBtn.addEventListener("mouseup", function () {
