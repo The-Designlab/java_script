@@ -52,19 +52,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     .from('#how-we-work_btn', {
         opacity: 0
-    }, "<0.1") // QA Suggestion: Consistent, easy-to-read offset
+    }, ">0.1") // QA Suggestion: Consistent, easy-to-read offset
 
     .from('#gallery_btn', {
         opacity: 0
-    }, "<0.1")
+    }, ">0.1")
 
     .from('#work-with-us_btn', {
         opacity: 0
-    }, "<0.1")
+    }, ">0.1")
 
     .from('#contact_btn', {
         opacity: 0
-    }, "<0.1")
+    }, ">0.1")
 
     .addPause()
 
