@@ -14,12 +14,24 @@ const tl = gsap.timeline({ paused: true })
     ease: 'ease.out'
   })
   
+  .from("#burger-open", {
+    duration:0.5,
+    ease: 'ease.out',
+    color: "white"
+  })
+  
   .to("#burger-open", {
     duration:0.5,
     ease: 'ease.out',
     color: "var(--_color---primary--grey)"
   }, '-=<')
 
+  .from('#burger-label', {
+    duration:0.5,
+    ease: 'ease.out',
+    color: "white"
+  })
+  
   .to('#burger-label', {
     duration:0.5,
     ease: 'ease.out',
