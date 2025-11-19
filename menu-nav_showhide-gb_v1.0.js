@@ -11,7 +11,7 @@ const tl = gsap.timeline({ paused: true })
   })
   
   .to(".nav-layout_wrapper", {
-    backgroundColor: "rgba(163, 189, 177, 0.8)",
+    backgroundColor: "white",
     ease: 'ease.out'
   })
   
@@ -52,7 +52,7 @@ const tl = gsap.timeline({ paused: true })
   const tl = gsap.timeline({ paused: true, defaults: { duration: 0.5, ease: "power2.out" } })
     // Define the final (hovered) state in a single 'to' call
     .to(".nav-layout_wrapper", {
-        backgroundColor: "rgba(163, 189, 177, 0.8)",
+        backgroundColor: "white",
     }, 0) // Start at time 0
     
     .to(".rwa-text", {
