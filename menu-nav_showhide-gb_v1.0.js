@@ -3,7 +3,7 @@ addEventListener("DOMContentLoaded", (e) => {
 const item = document.querySelector(".new-nav");
 const mask = document.querySelector(".Body");
 
-/*const tl = gsap.timeline({ paused: true })
+const tl = gsap.timeline({ paused: true })
 
   .from(".nav-layout_wrapper", {
     backgroundColor: "transparent",
