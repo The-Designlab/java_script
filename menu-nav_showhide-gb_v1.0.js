@@ -11,10 +11,11 @@ const mask = document.querySelector(".Body");
   })
   
   .to(".nav-layout_wrapper", {
-    backgroundColor: "white",
+    backgroundColor: "rgba(163, 189, 177, 0.8)",
     ease: 'ease.out'
   })
-
+  
+/*
 .from(".rwa-text", {
    duration:0.1,
    color: "white"
@@ -34,23 +35,24 @@ const mask = document.querySelector(".Body");
     duration:0.1,
     color: "var(--colours--rwg-sage)"
   }, '-=<')
+  */
 
   .to("#burger-open", {
     duration:0.5,
     ease: 'ease.out',
-    color: "var(--colours--rwg-slate)"
+    color: "var(--_color---primary--grey)"
   }, '-=<')
 
   .to('#burger-label', {
     duration:0.5,
     ease: 'ease.out',
-    color: "var(--colours--rwg-slate)"
+    color: "var(--_color---primary--grey)"
   }, '-=<')*/
 
   const tl = gsap.timeline({ paused: true, defaults: { duration: 0.5, ease: "power2.out" } })
     // Define the final (hovered) state in a single 'to' call
     .to(".nav-layout_wrapper", {
-        backgroundColor: "white",
+        backgroundColor: "rgba(163, 189, 177, 0.8)",
     }, 0) // Start at time 0
     
     .to(".rwa-text", {
@@ -62,7 +64,7 @@ const mask = document.querySelector(".Body");
     }, 0) // Also start at time 0
     
     .to(["#burger-open", "#burger-label"], {
-        color: "var(--colours--rwg-slate)",
+        color: "var(--_color---primary--grey)",
     }, 0); // Also start at time 0
 
 item.addEventListener("mouseenter", function () {
