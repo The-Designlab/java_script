@@ -1,6 +1,6 @@
 addEventListener("DOMContentLoaded", () => {
   
-  const item = document.querySelector(".nav_wrapper");
+  const item = document.querySelector(".new-nav");
 
   // QA FIX: Safety check. If the element isn't found, stop here to prevent errors.
   if (!item) return; 
@@ -12,12 +12,19 @@ addEventListener("DOMContentLoaded", () => {
   });
 
   tl
-    .to(".nav-logo_wrapper", {
-      backgroundColor: "rgba(163, 189, 177, 0.8)",
+    .to(".nav-layout_wrapper", {
+      backgroundColor: "white",
     })
+    .to(".rwa-text", {
+      color: "var(--colours--rwg-slate)",
+    })
+    .to(".group-text", {
+      color: "var(--colours--rwg-sage)",
+    }, "<")
+    
     // QA FIX: target multiple elements in one tween
     .to(["#burger-open", "#burger-label"], {
-      color: "var(--_color---primary--grey)",
+      color: "var(--colours--rwg-slate)",
     }, "<"); // QA FIX: "<" symbol aligns this animation to start with the previous one
 
   item.addEventListener("mouseenter", () => {
