@@ -24,7 +24,7 @@ const tl = gsap.timeline({ paused: true })
     duration:0.5,
     ease: 'ease.out',
     color: "var(--_color---primary--grey)"
-  }, '-=<')*/
+  }, '-=<')
 
   const tl = gsap.timeline({ paused: true, defaults: { duration: 0.5, ease: "power2.out" } })
     // Define the final (hovered) state in a single 'to' call
