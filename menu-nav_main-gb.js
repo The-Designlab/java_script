@@ -44,9 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .addLabel("nav-loaded") // QA Fix: Standardized to a single label
 
     .from('#about-us_btn', {
-        /*
         xPercent: -50,
-        */
         opacity: 0
     })
 
