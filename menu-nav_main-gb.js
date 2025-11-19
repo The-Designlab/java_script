@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const subnavItem = document.querySelector('#sub-nav_item');
 
     // Set GSAP defaults
-    gsap.defaults({ duration: 0.5, ease: 'power1.out' });
+    gsap.defaults({ duration: 0.3, ease: 'power1.out' });
 
     // 2. Timeline Definition
     const tl = gsap.timeline({ paused: true });
@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .addLabel("nav-loaded") // QA Fix: Standardized to a single label
 
     .from('#about-us_btn', {
-        duration: 0.5,
         xPercent: -50,
         opacity: 0
     })
@@ -99,14 +98,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }) 
 */
     .to(".main-nav__block", {
-        duration: 0.5,
         xPercent: -80,
         ease: 'ease.out',
         autoAlpha: 0
     })
 
     .from(".sub-nav__block", {
-        duration: 0.5,
         xPercent: -80,
         ease: 'ease.out',
         opacity: 0
