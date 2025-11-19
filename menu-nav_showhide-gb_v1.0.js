@@ -1,7 +1,6 @@
 addEventListener("DOMContentLoaded", (e) => {
 
 const item = document.querySelector(".new-nav");
-/*const mask = document.querySelector(".Body");*/
 
 const tl = gsap.timeline({ paused: true })
 
@@ -15,28 +14,6 @@ const tl = gsap.timeline({ paused: true })
     ease: 'ease.out'
   })
   
-/*
-.from(".rwa-text", {
-   duration:0.1,
-   color: "white"
-  }, '-=<')
-  
-  .to(".rwa-text", {
-   duration:0.1,
-   color: "var(--colours--rwg-slate)"
-  }, '-=<')
-
-  .from(".group-text", {
-    duration:0.1,
-    color: "white"
-  }, '-=<')
-  
-  .to(".group-text", {
-    duration:0.1,
-    color: "var(--colours--rwg-sage)"
-  }, '-=<')
-  */
-
   .to("#burger-open", {
     duration:0.5,
     ease: 'ease.out',
@@ -54,14 +31,6 @@ const tl = gsap.timeline({ paused: true })
     .to(".nav-layout_wrapper", {
         backgroundColor: "white",
     }, 0) // Start at time 0
-    
-    .to(".rwa-text", {
-        color: "var(--colours--rwg-slate)",
-    }, 0) // Also start at time 0
-    
-    .to(".group-text", {
-        color: "var(--colours--rwg-sage)",
-    }, 0) // Also start at time 0
     
     .to(["#burger-open", "#burger-label"], {
         color: "var(--_color---primary--grey)",
