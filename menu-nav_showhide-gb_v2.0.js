@@ -12,8 +12,8 @@ addEventListener("DOMContentLoaded", () => {
   });
 
   tl
-    .to(".nav-layout_wrapper", {
-      backgroundColor: "white",
+    .to(".nav-logo_bground", {
+      backgroundColor: "rgba(163, 189, 177, 0.8)",
     })
     // QA FIX: target multiple elements in one tween
     .to(["#burger-open", "#burger-label"], {
