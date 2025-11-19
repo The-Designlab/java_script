@@ -13,7 +13,7 @@ addEventListener("DOMContentLoaded", () => {
 
   tl
     .to(".nav-layout_wrapper", {
-      backgroundColor: "rgba(255,255,255,40)",
+      backgroundColor: "rgba(255,255,255,0.8)",
     })
     .to(".rwa-text", {
       color: "var(--colours--rwg-slate)",
