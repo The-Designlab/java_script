@@ -1,6 +1,6 @@
 addEventListener("DOMContentLoaded", (e) => {
 
-const item = document.querySelector(".new-nav");
+const item = document.querySelector(".nav_wrapper");
 
 const tl = gsap.timeline({ paused: true })
 
