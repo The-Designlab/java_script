@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1. Element selection (QA Check: Ensure these selectors exist in your HTML)
     const openBtn = document.querySelector(".open-menu_btn");
     const closeBtn = document.querySelector(".close-menu_btn");
-    const expBtn = document.querySelector("#expertise_btn");
-    const expBackBtn = document.querySelector("#exp-back_btn");
+    const expBtn = document.querySelector('#expertise_btn');
+    const expBackBtn = document.querySelector('#exp-back_btn');
     const workBtn = document.querySelector('#work-with-us_btn');
     const workBackBtn = document.querySelector('#work-back_btn');
     const subnavItem = document.querySelector('#sub-nav_item');
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         opacity: 0
     })
 
-    .from('#how-we-work_btn', {
+    .from('#expertise_btn', {
         opacity: 0
     }, ">0.1") // QA Suggestion: Consistent, easy-to-read offset
 
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
         autoAlpha: 0
     })
 
-    .from(".sub-nav__block", {
+    .from(".with-nav-btn__list", {
         xPercent: -80,
         ease: 'ease.out',
         opacity: 0
