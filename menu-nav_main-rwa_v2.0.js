@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const expBackBtn = document.querySelector('#exp-back_btn');
     const workBtn = document.querySelector('#work-with-us_btn');
     const workBackBtn = document.querySelector('#work-back_btn');
-    // const subnavItem = document.querySelector('#sub-nav_item'); // Kept commented out as per previous QA
+    const subnavItem = document.querySelector('#sub-nav_item');
 
-    // Set GSAP defaults (Standardized ease)
-    gsap.defaults({ duration: 0.3, ease: 'power2.out' }); // Changed to power2.out for better feel
+    // Set GSAP defaults
+    gsap.defaults({ duration: 0.3, ease: 'power1.out' });
 
     // 2. Timeline Definition
     const tl = gsap.timeline({ paused: true });
@@ -25,24 +25,25 @@ document.addEventListener("DOMContentLoaded", () => {
     .to(".open-menu_btn", {
         duration: 0.2,
         yPercent: -100,
-        ease: 'power4.out' // Retained this specific ease for the button transition
+        ease: 'power4.out'
     }, "<") // Start with the logo movement
 
     // Burger animation (Close appears)
     .from(".close-menu_btn", {
         duration: 0.2,
         yPercent: 100,
-        ease: 'power4.out', // Retained this specific ease for the button transition
+        ease: 'power4.out',
         autoAlpha: 0
     }, "<") // Start with the logo movement
 
     .from(".black_mask", {
         duration: 1,
-        opacity: 0
+        opacity: 0,
+        ease: 'power1.out'
     }, "<") // Start with the logo movement
 
     // 1st level-nav items staggered load
-    .addLabel("nav-loaded") // The designated stop point for the main menu open state
+    .addLabel("nav-loaded") // QA Fix: Standardized to a single label
 
     .from('#about-us_btn', {
         opacity: 0
@@ -50,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     .from('#expertise_btn', {
         opacity: 0
-    }, ">0.1")
+    }, ">0.1") // QA Suggestion: Consistent, easy-to-read offset
 
     .from('#gallery_btn', {
         opacity: 0
@@ -64,68 +65,78 @@ document.addEventListener("DOMContentLoaded", () => {
         opacity: 0
     }, ">0.1")
 
-    // QA Fix: Removed the first .addPause(). The "nav-loaded" label is the control point.
+    .addPause() // This pause is now redundant but kept as requested
 
     // --- Subnav (Expertise) Animation ---
+
     .addLabel("expertise")
 
-    // QA Fix: Ensure we are targeting the list that is currently visible to hide it
-    // NOTE: If the main nav block is moving, you don't need to hide the exp list here yet.
-    .to(".main-nav_block", { // Assuming main-nav_block is the container for the 1st level links
-        duration: 0.3,
+/* .to(".main-nav_block", {
+        duration: .3,
         xPercent: -80,
-        autoAlpha: 0 // Fade out as it slides
-    })
-
-    .from(".exp-nav-btn__list", {
-        duration: 0.3,
-        xPercent: 80, // Using 80 to slide in from the opposite side of the main nav slide-out
+        ease: 'ease.out',
         autoAlpha: 0
-    }, "-=0.2") // Slight overlap
+    })
+*/
+    .from(".exp-nav-btn__list", {
+        duration: .3,
+        xPercent: -80,
+        ease: 'ease.out',
+        autoAlpha: 0
+    }, "-=0.2")
 
-    .addPause() // Pause after Expertise menu is displayed
+    .addPause()
 
+        
     // --- Subnav (Work with) Animation ---
+
     .addLabel("work-with")
 
-    // QA Fix: Hide the Expertise list instantly before showing the Work list
-    .set(".exp-nav-btn__list", {
-        autoAlpha: 0,
-        xPercent: 0 // Reset xPercent to 0 or its initial state for clean reverse/future plays
-    })
-
-    // Slide out the Main Nav Block (needed if jumping from Expertise Back to Work With)
-    .to(".main-nav_block", {
+/* // QA Fix: Ensure duration is 0 for immediate hiding, prevents unclickable state
+    .to(".exp-nav-btn__list", {
+        duration: 0,
+        visibility: "hidden" 
+    }) 
+*/
+    .to(".main-nav__block", {
         xPercent: -80,
+        ease: 'ease.out',
         autoAlpha: 0
     })
 
     .from(".with-nav-btn__list", {
-        xPercent: 80, // Slide in from the opposite side
-        autoAlpha: 0
-    }, "-=0.2") // Slight overlap
+        xPercent: -80,
+        ease: 'ease.out',
+        opacity: 0
+    }, "-=0.2")
 
     .addPause();
 
 
-    // 3. Event Listeners (Incorporating logic fixes)
-
-    // Main Menu Open
+    // 3. Event Listeners (QA Check: Added null checks for robustness)
+    
+    // Main Menu Open/Close
     if (openBtn) {
         openBtn.addEventListener("mouseup", function () {
-            // QA Fix: Play ONLY up to the 'nav-loaded' label, preventing subsequent subnav animations.
+            // ⭐ THE FIX: Play to the 'nav-loaded' label to stop the animation there.
             tl.play("nav-loaded");
         });
     }
 
-    // Main Menu Close
+    // QA Fix: Removed .75 argument. Reversing should go back to the absolute start (closed state).
     if (closeBtn) {
         closeBtn.addEventListener("mouseup", function () {
-            // QA Fix: Added logic to reset timescale after fast reverse.
-            tl.reverse(0).timeScale(2).then(() => tl.timeScale(1));
+            tl.reverse().timescale(2);
         });
     }
 
+/* // QA Fix: Removed .75 argument. Assuming this element also closes the main nav. Is this needed?
+    if (subnavItem) {
+        subnavItem.addEventListener("mouseup", function () {
+            tl.reverse();
+        });
+    }
+*/
     // Expertise Sub-Menu
     if (expBtn) {
         expBtn.addEventListener("mouseup", function () {
@@ -135,8 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Back to Main Nav from Expertise
     if (expBackBtn) {
+        // QA Fix: Targetting the single, standardized label
         expBackBtn.addEventListener("mouseup", function () {
-            // Plays back to the main menu loaded state
             tl.play("nav-loaded");
         });
     }
@@ -150,8 +161,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Back to Main Nav from Work With Us
     if (workBackBtn) {
+        // QA Fix: Targetting the single, standardized label
         workBackBtn.addEventListener("mouseup", function () {
-            // Plays back to the main menu loaded state
             tl.play("nav-loaded");
         });
     }
