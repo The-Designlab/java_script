@@ -67,17 +67,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     .addPause()
 
-/*    // --- Subnav (Expertise) Animation ---
+    // --- Subnav (Expertise) Animation ---
 
     .addLabel("expertise")
 
-    .to(".main-nav_block", {
+/*    .to(".main-nav_block", {
         duration: .3,
         xPercent: -80,
         ease: 'ease.out',
         autoAlpha: 0
     })
-
+*/
     .from(".exp-nav-btn__list", {
         duration: .3,
         xPercent: -80,
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, "-=0.2")
 
     .addPause()
-*/
+
         
     // --- Subnav (Work with) Animation ---
 
