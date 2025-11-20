@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // QA Fix: Removed .75 argument. Reversing should go back to the absolute start (closed state).
     if (closeBtn) {
         closeBtn.addEventListener("mouseup", function () {
-            tl.reverse();
+            tl.reverse().timescale(2);
         });
     }
 
