@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1. Element selection (QA Check: Ensure these selectors exist in your HTML)
     const openBtn = document.querySelector(".open-menu_btn");
     const closeBtn = document.querySelector(".close-menu_btn");
+    const expBtn = document.querySelector("#expertise_btn");
+    const expBackBtn = document.querySelector("#exp-back_btn");
     const workBtn = document.querySelector('#work-with-us_btn');
     const workBackBtn = document.querySelector('#work-back_btn');
     const subnavItem = document.querySelector('#sub-nav_item');
@@ -44,9 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .addLabel("nav-loaded") // QA Fix: Standardized to a single label
 
     .from('#about-us_btn', {
-        /*
-        xPercent: -50,
-        */
         opacity: 0
     })
 
