@@ -42,8 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: 'power1.out'
     }, "<") // Start with the logo movement
 
-    // 1st level-nav items staggered load
-    .addLabel("nav-loaded") // QA Fix: Standardized to a single label
+    // 1st level-nav items staggered load nav loaded lbel was here at line 47
 
     .from('#about-us_btn', {
         opacity: 0
@@ -65,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         opacity: 0
     }, ">0.1")
 
+    .addLabel("nav-loaded") // QA Fix: Standardized to a single label        
     .addPause() // This pause is now redundant but kept as requested
 
     // --- Subnav (Expertise) Animation ---
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // QA Fix: Removed .75 argument. Reversing should go back to the absolute start (closed state).
     if (closeBtn) {
         closeBtn.addEventListener("mouseup", function () {
-            tl.reverse().timescale(2);
+            tl.reverse();
         });
     }
 
