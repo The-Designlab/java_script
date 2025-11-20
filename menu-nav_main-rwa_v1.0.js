@@ -129,28 +129,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // QA Fix: Removed .75 argument. Assuming this element also closes the main nav.
+/*    // QA Fix: Removed .75 argument. Assuming this element also closes the main nav. Is this needed?
     if (subnavItem) {
         subnavItem.addEventListener("mouseup", function () {
             tl.reverse();
         });
     }
-/*
+*/
     // Expertise Sub-Menu
-    if (expertiseBtn) {
-        expertiseBtn.addEventListener("mouseup", function () {
+    if (expBtn) {
+        expBtn.addEventListener("mouseup", function () {
             tl.play("expertise");
         });
     }
 
     // Back to Main Nav from Expertise
-    if (expertiseBackBtn) {
+    if (expBackBtn) {
         // QA Fix: Targetting the single, standardized label
-        expertiseBackBtn.addEventListener("mouseup", function () {
+        expBackBtn.addEventListener("mouseup", function () {
             tl.play("nav-loaded");
         });
     }
-*/
+
     // Work With Us Sub-Menu
     if (workBtn) {
         workBtn.addEventListener("mouseup", function () {
