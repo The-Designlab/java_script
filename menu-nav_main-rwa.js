@@ -72,26 +72,26 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Subnav (Expertise) Animation ---
 
     .addLabel("start-expertise_menu")
-
-    // KEY FIX 1: Explicitly hide the Work menu to prevent overlap/ghost clicks
-      .set(".with-nav-btn__list", { autoAlpha: 0, display: "none" }) 
-    // Ensure Expertise is display block (but invisible) so it can animate in
-      .set(".exp-nav-btn__list", { display: "block" })
-        
+      
     .to(".main-nav_block", {
         duration: .3,
         xPercent: -80,
         ease: 'ease.out',
         autoAlpha: 0
     })
-           
-    .fromTo(".exp-nav-btn__list", {
+        
+/*        .to(".with-nav-btn__list", {
+        duration: .3,
         xPercent: -80,
-        autoAlpha: 0},
-        {duration: .3,
-        xPercent: 0,
         ease: 'ease.out',
-        autoAlpha: 1
+        autoAlpha: 0
+    })
+ */       
+    .from(".exp-nav-btn__list", {
+        duration: .3,
+        xPercent: -80,
+        ease: 'ease.out',
+        autoAlpha: 0
     }, "-=0.2")
 
     .addLabel("end-expertise_menu")    
@@ -101,19 +101,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     .addLabel("start-workwith_menu")
 
-    // KEY FIX 2: Explicitly hide the Expertise menu
+    // KEY FIX 2: Explicitly hide the Expertise menu*
       .set(".exp-nav-btn__list", { autoAlpha: 0, display: "none" })
-    // Ensure Work is display block
+    // Ensure Work is display block*
       .set(".with-nav-btn__list", { display: "block" })
         
-/*
-// remove expertise menu from timeline
-        .to(".exp-nav-btn__list", {
-        duration: 0,
-        autoAlpha: 0
-    })
-*/
-         
     .to(".main-nav_block", {
         duration: .3,
         xPercent: -80,
@@ -121,13 +113,11 @@ document.addEventListener("DOMContentLoaded", () => {
         autoAlpha: 0
     })
 
-    .fromTo(".with-nav-btn__list", {
+    .from(".with-nav-btn__list", {
+        duration: .3,
         xPercent: -80,
-        autoAlpha: 0},
-        {duration: .3,
-        xPercent: 0,
         ease: 'ease.out',
-        autoAlpha: 1
+        opacity: 0
     }, "-=0.2")
 
     .addLabel("end-workwith_menu")
@@ -138,21 +128,22 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Main Menu Open/Close
     if (openBtn) {
-        openBtn.addEventListener("click", () => tl.play("nav-loaded"));
+        openBtn.addEventListener("click", function () {
+            tl.play();
+        });
     }
 
     // QA Fix: Removed .75 argument. Reversing should go back to the absolute start (closed state).
     if (closeBtn) {
-        closeBtn.addEventListener("click", () => {
-            tl.pause();
-            tl.reverse(0);
+        closeBtn.addEventListener("click", function () {
+            tl.pause(0);
         });
     }
 
-    //****** QA Fix: Removed .75 argument. Assuming this element also closes the main nav. Not sure where this sits now???
+    // QA Fix: Removed .75 argument. Assuming this element also closes the main nav.
     if (subnavItem) {
         subnavItem.addEventListener("click", function () {
-            tl.reverse(0);
+            tl.pause(0);
         });
     }
 
@@ -166,8 +157,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Back to Main Nav from Expertise
     if (expertiseBackBtn) {
         // QA Fix: Targetting the single, standardized label
-        expertiseBackBtn.addEventListener("click", function () {
-            tl.reverse();
+        expertiseBackBtn.addEventListener("mouseup", function () {
+            tl.play("nav-loaded");
         });
     }
 
@@ -182,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (workBackBtn) {
         // QA Fix: Targetting the single, standardized label
         workBackBtn.addEventListener("click", function () {
-            tl.reverse();
+            tl.play("nav-loaded");
         });
     }
 
