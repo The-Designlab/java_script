@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: .3,
         xPercent: -80,
         ease: 'ease.out',
-        autoAlpha: 1
+        autoAlpha: 0
     }, "-=0.2")
 
     .addLabel("end-expertise_menu")    
