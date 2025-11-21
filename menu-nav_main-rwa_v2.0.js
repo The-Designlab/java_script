@@ -72,6 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Subnav (Expertise) Animation ---
 
     .addLabel("start-expertise_menu")
+
+        // KEY FIX 1: Explicitly hide the Work menu to prevent overlap/ghost clicks
+      .set(".with-nav-btn__list", { autoAlpha: 0, display: "none" }) 
+      // Ensure Expertise is display block (but invisible) so it can animate in
+      .set(".exp-nav-btn__list", { display: "block" })
       
     .to(".main-nav_block", {
         duration: .3,
