@@ -94,10 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     .addLabel("start-workwith_menu")
     
-    // remove workwith menu from timeline
-    .to(".exp-nav-btn__list", {
+    // remove expertise menu from timeline
+        .to(".exp-nav-btn__list", {
         duration: 0,
-        visibility: 0
+        visibility: "hidden"
     })
          
     .to(".main-nav_block", {
