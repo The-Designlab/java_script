@@ -98,7 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .to(".exp-nav-btn__list", {
         duration: 0,
         autoAlpha: 0
-        /*visibility: "hidden"*/
     })
          
     .to(".main-nav_block", {
