@@ -79,14 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: 'ease.out',
         autoAlpha: 0
     })
-        
-/*        .to(".with-nav-btn__list", {
-        duration: .3,
-        xPercent: -80,
-        ease: 'ease.out',
-        autoAlpha: 0
-    })
- */       
+           
     .from(".exp-nav-btn__list", {
         duration: .3,
         xPercent: -80,
@@ -100,8 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Subnav (Work with) Animation ---
 
     .addLabel("start-workwith_menu")
-
-        
+    
+    // remove workwith menu from timeline
+    .to(".exp-nav-btn__list", {
+        duration: 0,
+        visibility: 0
+    })
+         
     .to(".main-nav_block", {
         duration: .3,
         xPercent: -80,
