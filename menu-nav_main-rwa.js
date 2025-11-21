@@ -101,9 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     .addLabel("start-workwith_menu")
 
-    // KEY FIX 2: Explicitly hide the Expertise menu*
-      .set(".exp-nav-btn__list", { autoAlpha: 0, display: "none" })
-        
     .to(".main-nav_block", {
         duration: .3,
         xPercent: -80,
