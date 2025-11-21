@@ -126,14 +126,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // QA Fix: Removed .75 argument. Reversing should go back to the absolute start (closed state).
     if (closeBtn) {
         closeBtn.addEventListener("mouseup", function () {
-            tl.reverse();
+            tl.pause(0);
         });
     }
 
     // QA Fix: Removed .75 argument. Assuming this element also closes the main nav.
     if (subnavItem) {
         subnavItem.addEventListener("mouseup", function () {
-            tl.reverse();
+            tl.pause(0);
         });
     }
 /*
