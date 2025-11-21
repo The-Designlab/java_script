@@ -73,11 +73,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     .addLabel("start-expertise_menu")
 
-      // KEY FIX 1: Explicitly hide the Work menu to prevent overlap/ghost clicks
+ /*     // KEY FIX 1: Explicitly hide the Work menu to prevent overlap/ghost clicks
       .set(".with-nav-btn__list", { autoAlpha: 0, display: "none" }) 
       // Ensure Expertise is display block (but invisible) so it can animate in
       .set(".exp-nav-btn__list", { display: "block" })
-     
+  */   
     .to(".main-nav_block", {
         duration: .3,
         xPercent: -80,
@@ -91,21 +91,21 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: 'ease.out',
         autoAlpha: 0
     })
-        
+ */       
     .from(".exp-nav-btn__list", {
         duration: .3,
         xPercent: -80,
         ease: 'ease.out',
         autoAlpha: 0
     }, "-=0.2")
- */
 
+/*
 //new code copied in here
     .fromTo(".exp-nav-btn__list", 
           { xPercent: -80, autoAlpha: 0 }, // Start values
           { duration: .3, xPercent: 0, autoAlpha: 1, ease: 'ease.out' }, // End values
       "-=0.2")        
-    
+  */  
     .addLabel("end-expertise_menu")    
     .addPause()
 
