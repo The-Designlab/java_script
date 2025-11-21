@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Main Menu Open/Close
     if (openBtn) {
         openBtn.addEventListener("mouseup", function () {
-            tl.play();
+            tl.play(0);
         });
     }
 
