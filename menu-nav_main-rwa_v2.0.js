@@ -80,13 +80,13 @@ document.addEventListener("DOMContentLoaded", () => {
         autoAlpha: 0
     })
         
-        .to(".with-nav-btn__list", {
+/*        .to(".with-nav-btn__list", {
         duration: .3,
         xPercent: -80,
         ease: 'ease.out',
         autoAlpha: 0
     })
-        
+ */       
     .from(".exp-nav-btn__list", {
         duration: .3,
         xPercent: -80,
