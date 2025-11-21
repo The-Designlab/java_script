@@ -86,13 +86,24 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: 'ease.out',
         autoAlpha: 0
     })
-*/        
+        
     .from(".exp-nav-btn__list", {
         duration: .3,
         xPercent: -80,
         ease: 'ease.out',
         autoAlpha: 0
     }, "-=0.2")
+*/
+    .fromTo(".exp-nav-btn__list", {
+        duration: .3,
+        xPercent: -80,
+        ease: 'ease.out',
+        autoAlpha: 0
+    }, 
+    {   
+        autoAlpha: 1,
+        xPercent: 0
+    },  "-=0.2")
 /*
     //new code copied in here
     .fromTo(".exp-nav-btn__list", 
