@@ -118,28 +118,28 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Main Menu Open/Close
     if (openBtn) {
-        openBtn.addEventListener("mouseup", function () {
+        openBtn.addEventListener("click", function () {
             tl.play(0);
         });
     }
 
     // QA Fix: Removed .75 argument. Reversing should go back to the absolute start (closed state).
     if (closeBtn) {
-        closeBtn.addEventListener("mouseup", function () {
+        closeBtn.addEventListener("click", function () {
             tl.pause(0);
         });
     }
 
     // QA Fix: Removed .75 argument. Assuming this element also closes the main nav.
     if (subnavItem) {
-        subnavItem.addEventListener("mouseup", function () {
+        subnavItem.addEventListener("click", function () {
             tl.pause(0);
         });
     }
 /*
     // Expertise Sub-Menu
     if (expertiseBtn) {
-        expertiseBtn.addEventListener("mouseup", function () {
+        expertiseBtn.addEventListener("click", function () {
             tl.play("expertise");
         });
     }
@@ -147,14 +147,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Back to Main Nav from Expertise
     if (expertiseBackBtn) {
         // QA Fix: Targetting the single, standardized label
-        expertiseBackBtn.addEventListener("mouseup", function () {
+        expertiseBackBtn.addEventListener("click", function () {
             tl.play("nav-loaded");
         });
     }
 */
     // Work With Us Sub-Menu
     if (workBtn) {
-        workBtn.addEventListener("mouseup", function () {
+        workBtn.addEventListener("click", function () {
             tl.play("work-with");
         });
     }
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Back to Main Nav from Work With Us
     if (workBackBtn) {
         // QA Fix: Targetting the single, standardized label
-        workBackBtn.addEventListener("mouseup", function () {
+        workBackBtn.addEventListener("click", function () {
             tl.play("nav-loaded");
         });
     }
