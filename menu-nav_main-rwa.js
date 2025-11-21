@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Subnav (Expertise) Animation ---
 
-    .addLabel("expertise")
+    .addLabel("start-expertise_menu")
 
     .to(".main-nav_block", {
         duration: .3,
@@ -87,18 +87,19 @@ document.addEventListener("DOMContentLoaded", () => {
         autoAlpha: 0
     }, "-=0.2")
 
+    .addLabel("end-expertise_menu")    
     .addPause()
 
     // --- Subnav (Work with) Animation ---
 
-    .addLabel("work-with")
+    .addLabel("start-workwith_menu")
 
-    // QA Fix: Ensure duration is 0 for immediate hiding, prevents unclickable state
+/*    // QA Fix: Ensure duration is 0 for immediate hiding, prevents unclickable state
     .to(".exp-nav-btn__list", {
         duration: 0,
         visibility: "hidden" 
     }) 
-
+*/
     .to(".main-nav_block", {
         duration: .3,
         xPercent: -80,
@@ -113,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         opacity: 0
     }, "-=0.2")
 
+    .addLabel("end-workwith_menu")
     .addPause();
 
 
@@ -142,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Expertise Sub-Menu
     if (expertiseBtn) {
         expertiseBtn.addEventListener("click", function () {
-            tl.play("expertise");
+            tl.play("start-expertise_menu");
         });
     }
 
@@ -157,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Work With Us Sub-Menu
     if (workBtn) {
         workBtn.addEventListener("click", function () {
-            tl.play("work-with");
+            tl.play("start-workwith_menu");
         });
     }
 
