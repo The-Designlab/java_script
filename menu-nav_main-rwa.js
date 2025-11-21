@@ -94,12 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     .addLabel("start-workwith_menu")
 
-/*    // QA Fix: Ensure duration is 0 for immediate hiding, prevents unclickable state
-    .to(".exp-nav-btn__list", {
-        duration: 0,
-        visibility: "hidden" 
-    }) 
-*/
+        
     .to(".main-nav_block", {
         duration: .3,
         xPercent: -80,
