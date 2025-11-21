@@ -94,23 +94,12 @@ document.addEventListener("DOMContentLoaded", () => {
         autoAlpha: 0
     }, "-=0.2")
 */
-    .fromTo(".exp-nav-btn__list", {
-        duration: .3,
-        xPercent: -80,
-        ease: 'ease.out',
-        autoAlpha: 0
-    }, 
-    {   
-        autoAlpha: 1,
-        xPercent: 0
-    },  "-=0.2")
-/*
-    //new code copied in here
+//new code copied in here
     .fromTo(".exp-nav-btn__list", 
           { xPercent: -80, autoAlpha: 0 }, // Start values
           { duration: .3, xPercent: 0, autoAlpha: 1, ease: 'ease.out' }, // End values
       "-=0.2")        
-  */      
+      
     .addLabel("end-expertise_menu")    
     .addPause()
 
