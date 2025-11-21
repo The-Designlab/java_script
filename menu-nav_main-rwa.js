@@ -97,7 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // remove expertise menu from timeline
         .to(".exp-nav-btn__list", {
         duration: 0,
-        visibility: "hidden"
+        autoAlpha: 0
+        /*visibility: "hidden"*/
     })
          
     .to(".main-nav_block", {
