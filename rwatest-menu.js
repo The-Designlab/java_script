@@ -47,7 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1. Animate Main OUT to the LEFT
     gsap.to(mainNav, { 
       xPercent: -80, 
-      autoAlpha: 0, 
+      autoAlpha: 0,
+      opacity: 0,
       duration: 0.3,
       ease: "power2.in"
     });
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. Animate Target Sub IN from the RIGHT
     gsap.fromTo(targetMenu, 
       { xPercent: -80, autoAlpha: 0 }, // Ensure it starts from right/hidden
-      { xPercent: 0, autoAlpha: 1, duration: 0.3, delay: 0.1 }
+      { xPercent: 0, autoAlpha: 1, opacity: 0, duration: 0.3, delay: 0.1 }
     );
   }
 
@@ -64,7 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1. Animate Current Sub OUT to the RIGHT
     gsap.to(currentMenu, { 
       xPercent: -80, 
-      autoAlpha: 0, 
+      autoAlpha: 0,
+      opacity: 0,
       duration: 0.3,
       ease: "power2.in"
     });
@@ -72,7 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. Animate Main IN from the LEFT
     gsap.to(mainNav, { 
       xPercent: 0, 
-      autoAlpha: 1, 
+      autoAlpha: 1,
+      opacity: 0,
       duration: 0.3, 
       delay: 0.1 
     });
