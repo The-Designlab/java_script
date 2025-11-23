@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         y: 30, 
         opacity: 0, 
         stagger: 0.1,
-        duration: 0.4
+        duration: 0.3
     }, "-=0.4");
 
 
@@ -48,14 +48,14 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.to(mainNav, { 
       xPercent: -80, 
       autoAlpha: 0, 
-      duration: 0.4,
+      duration: 0.3,
       ease: "power2.in"
     });
 
     // 2. Animate Target Sub IN from the RIGHT
     gsap.fromTo(targetMenu, 
       { xPercent: -80, autoAlpha: 0 }, // Ensure it starts from right/hidden
-      { xPercent: 0, autoAlpha: 1, duration: 0.4, delay: 0.1 }
+      { xPercent: 0, autoAlpha: 1, duration: 0.3, delay: 0.1 }
     );
   }
 
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.to(currentMenu, { 
       xPercent: -80, 
       autoAlpha: 0, 
-      duration: 0.4,
+      duration: 0.3,
       ease: "power2.in"
     });
 
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.to(mainNav, { 
       xPercent: 0, 
       autoAlpha: 1, 
-      duration: 0.4, 
+      duration: 0.3, 
       delay: 0.1 
     });
   }
