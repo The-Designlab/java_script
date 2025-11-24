@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .from(".main-nav_block li", { // Stagger in main links
         y: 30, 
         opacity: 0, 
-        stagger: 2,
+        stagger: 0.2,
         duration: 0.3
     }/*, "-=0.3"*/);
 
