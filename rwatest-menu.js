@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         opacity: 0, 
         stagger: 2,
         duration: 0.3
-    }, "-=0.3");
+    }/*, "-=0.3"*/);
 
 
   // --- 3. HELPER FUNCTIONS (The "Switching" Logic) ---
