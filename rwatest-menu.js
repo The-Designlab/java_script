@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .from(".close-menu_btn", { yPercent: 100, autoAlpha: 0 }, "<")
     .to(".black_mask", { opacity: 1, duration: 0.8 }, "<") // Fade in mask
     .from(".main-nav_block li", { // Stagger in main links
-        y: 30, 
+        y: 0, 
         opacity: 0, 
         stagger: 0.3,
         duration: 0.2
