@@ -35,9 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .from(".main-nav_block li", { // Stagger in main links
         y: 30, 
         opacity: 0, 
-        stagger: 0.1,
-        duration: 0.8
-    }, "-=0.10");
+        stagger: 2,
+        duration: 0.3
+    }, "-=0.3");
 
 
   // --- 3. HELPER FUNCTIONS (The "Switching" Logic) ---
