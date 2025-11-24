@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const expBack = document.querySelector('#exp-back_btn');
   const workBack = document.querySelector('#work-back_btn');
 
-  gsap.defaults({ duration: 0.3, ease: 'power1.out' });
+  gsap.defaults({ duration: 0.3, ease: 'power2.out' });
 
   // Set Initial States
   gsap.set([expNav, workNav], { autoAlpha: 0, xPercent: -80 }); // Subs sit to the right
