@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         y: 10, 
         opacity: 0, 
         stagger: 0.3,
-        duration: 0.2
+        duration: 0.5
     }/*, "-=0.3"*/);
 
 
