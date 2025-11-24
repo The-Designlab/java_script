@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
   openBtn.addEventListener("click", () => menuTL.play());
   
   closeBtn.addEventListener("click", () => {
-    menuTL.reverse();
+    menuTL.pause(0);
     // SAFETY: When closing the whole menu, reset all submenus instantly
     // so next time you open, it's clean.
     gsap.set([expNav, workNav], { autoAlpha: 0, xPercent: 50 });
