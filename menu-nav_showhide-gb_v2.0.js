@@ -16,9 +16,9 @@ addEventListener("DOMContentLoaded", () => {
       backgroundColor: "rgba(163, 189, 177, 0.8)",
     })
     // QA FIX: target multiple elements in one tween
-    .to(["#burger-open", "#burger-label"], {
+    /*.to(["#burger-open", "#burger-label"], {
       color: "var(--_color---primary--grey)",
-    }, "<"); // QA FIX: "<" symbol aligns this animation to start with the previous one
+    }, "<")*/; // QA FIX: "<" symbol aligns this animation to start with the previous one
 
   item.addEventListener("mouseenter", () => {
     tl.play();
