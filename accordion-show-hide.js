@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Select all card containers
   // Make sure your Webflow class is named "Job Card"
-  const cards = document.querySelectorAll(".job-card");
+  const jobcards = document.querySelectorAll(".job-card");
 
   cards.forEach((card) => {
   
