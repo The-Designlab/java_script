@@ -1,45 +1,58 @@
 addEventListener("DOMContentLoaded", () => {
 
-// 1. Select the elements
-const toggleBtn = document.querySelector("#visibility-button");
-const content = document.querySelector("#job-card-content");
-const applyBtn = document.querySelector("#apply-btn");
+// 1. Select all card containers
+const cards = document.querySelectorAll(".job-card");
 
-// 2. Initial Setup
-// We use 'autoAlpha: 0' for the button. This sets opacity to 0 AND visibility to hidden.
-// This prevents users from accidentally clicking the invisible Apply button.
-gsap.set(content, { height: 0, overflow: "hidden" });
-gsap.set(applyBtn, { autoAlpha: 0 });
+// 2. Loop through each card to create a unique scope
+cards.forEach((card) => {
+  
+  // SCOPED SELECTORS:
+  // We search only inside the current 'card' element
+  const toggleBtn = card.querySelector(".visibility-button");
+  const content = card.querySelector(".job-card-content");
+  const applyBtn = card.querySelector(".apply-btn");
+  const contentItems = content.children; // Selects direct children for stagger
 
-// 3. Create the Timeline
-const tl = gsap.timeline({ 
-  paused: true, 
-  reversed: true 
-});
+  // 3. Initial Setup (Scoped to this card)
+  gsap.set(content, { height: 0, overflow: "hidden" });
+  gsap.set(applyBtn, { autoAlpha: 0 });
+  gsap.set(contentItems, { autoAlpha: 0, y: 20 });
 
-// -- Step A: Grow the content
-tl.to(content, {
-  height: "auto",
-  duration: 0.5,
-  ease: "power2.out"
-})
-// -- Step B: Fade in the Apply button
-// The "<0.2" parameter tells GSAP to start this 0.2 seconds after the PREVIOUS animation starts.
-// This creates a nice overlap.
-.to(applyBtn, {
-  autoAlpha: 1,
-  duration: 0.3
-}, "<0.2"); 
+  // 4. Create a unique Timeline for THIS card
+  const tl = gsap.timeline({ 
+    paused: true, 
+    reversed: true 
+  });
 
-// 4. Interaction Logic
-toggleBtn.addEventListener("click", () => {
-  if (tl.reversed()) {
-    // Open State
-    tl.play();
-    toggleBtn.innerText = "Show Less";
-  } else {
-    // Closed State
-    tl.reverse();
-    toggleBtn.innerText = "Show More"; // Assuming you want it to revert
-  }
+  tl.to(content, {
+    height: "auto",
+    duration: 0.6,
+    ease: "power2.out"
+  })
+  .to(contentItems, {
+    autoAlpha: 1,
+    y: 0,
+    duration: 0.4,
+    stagger: 0.1,
+    ease: "power2.out"
+  }, "<0.2")
+  .to(applyBtn, {
+    autoAlpha: 1,
+    duration: 0.3
+  }, "<");
+
+  // 5. Interaction Logic
+  toggleBtn.addEventListener("click", () => {
+    // Optional: Close other cards when opening a new one?
+    // If yes, we would need a slight modification here.
+    
+    if (tl.reversed()) {
+      tl.play();
+      toggleBtn.innerText = "Show Less";
+    } else {
+      tl.reverse();
+      toggleBtn.innerText = "Show More";
+    }
+  });
+  
 });
