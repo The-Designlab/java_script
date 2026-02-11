@@ -1,11 +1,10 @@
-addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
+  
+  // Select all card containers
+  // Make sure your Webflow class is named "Job Card"
+  const cards = document.querySelectorAll(".job-card");
 
-// 1. Select all card containers
-const cards = document.querySelectorAll(".job-card_body");
-const cards = document.querySelectorAll(".job-card");
-
-// 2. Loop through each card to create a unique scope
-cards.forEach((card) => {
+  cards.forEach((card) => {
   
   // SCOPED SELECTORS:
   // We search only inside the current 'card' element
