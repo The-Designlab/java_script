@@ -51,7 +51,7 @@ cards.forEach((card) => {
       toggleBtn.innerText = "Show Less";
     } else {
       tl.reverse();
-      toggleBtn.innerText = "Show More";
+      toggleBtn.innerText = "Learn More";
     }
   });
   
