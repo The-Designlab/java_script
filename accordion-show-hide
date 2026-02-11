@@ -1,7 +1,7 @@
 addEventListener("DOMContentLoaded", () => {
 
 // 1. Select all card containers
-const cards = document.querySelectorAll(".job-card");
+const cards = document.querySelectorAll(".job-card_body");
 
 // 2. Loop through each card to create a unique scope
 cards.forEach((card) => {
@@ -9,7 +9,7 @@ cards.forEach((card) => {
   // SCOPED SELECTORS:
   // We search only inside the current 'card' element
   const toggleBtn = card.querySelector(".visibility-button");
-  const content = card.querySelector(".job-card-content");
+  const content = card.querySelector(".job-card_content");
   const applyBtn = card.querySelector(".apply-btn");
   const contentItems = content.children; // Selects direct children for stagger
 
