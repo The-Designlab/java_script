@@ -1,29 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
   
   // Select all card containers
-  const jobcards = document.querySelectorAll(".job-card");
+  const jobCards = document.querySelectorAll(".job-card");
 
-  jobcards.forEach((card) => {
+  jobCards.forEach((card) => {
     
-    // SCOPED SELECTORS:
+    // 1. Select elements
     const toggleBtn = card.querySelector(".visibility-button");
-    
-    
-    const content = card.querySelector(".job-card_content"); 
-    
+    const content = card.querySelector(".job-card-content");
     const applyBtn = card.querySelector(".apply-btn");
 
-    // SAFETY CHECK: Prevents crash if elements aren't found
+    // Safety check
     if (!toggleBtn || !content || !applyBtn) return;
 
-    const contentItems = content.children;
-
-    // Initial Setup
+    // 2. Initial Setup
+    // We only need to hide the content height and the apply button now
     gsap.set(content, { height: 0, overflow: "hidden" });
     gsap.set(applyBtn, { autoAlpha: 0 });
-    gsap.set(contentItems, { autoAlpha: 0, y: 20 });
 
-    // Create Timeline
+    // 3. Create Timeline
     const tl = gsap.timeline({ 
       paused: true, 
       reversed: true 
@@ -34,29 +29,22 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 0.6,
       ease: "power2.out"
     })
-    .to(contentItems, {
-      autoAlpha: 1,
-      y: 0,
-      duration: 0.4,
-      stagger: 0.1,
-      ease: "power2.out"
-    }, "<0.2")
     .to(applyBtn, {
       autoAlpha: 1,
       duration: 0.3
-    }, "<");
+    }, "<0.2"); // "<0.2" starts the fade 0.2s after the height animation begins
 
-    // Interaction Logic
+    // 4. Interaction Logic
     toggleBtn.addEventListener("click", () => {
       if (tl.reversed()) {
         tl.play();
         toggleBtn.innerText = "Show Less";
       } else {
         tl.reverse();
-        toggleBtn.innerText = "Learn More";
+        toggleBtn.innerText = "Show More";
       }
     });
 
-  }); // End forEach
+  });
 
-}); // End DOMContentLoaded
+});
