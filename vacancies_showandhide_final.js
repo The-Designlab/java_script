@@ -6,7 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
   jobcards.forEach((card) => {
     
     // SCOPED SELECTORS:
+    // Select the button wrapper (for the click)
     const toggleBtn = card.querySelector(".visibility-button");
+    
+    // Select the specific text element INSIDE the button (for the text change)
+    const toggleBtnText = toggleBtn.querySelector(".btn-label");
     
     const content = card.querySelector(".job-card_content"); 
     
@@ -49,10 +53,11 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtn.addEventListener("click", () => {
       if (tl.reversed()) {
         tl.play();
-        toggleBtn.innerText = "SHOW LESS";
-      } else {
-        tl.reverse();
-        toggleBtn.innerText = "LEARN MORE";
+        // Update only the text element, preserving the button's layout
+    if(toggleBtnText) toggleBtnText.innerText = "SHOW LESS";
+  } else {
+    tl.reverse();
+    if(toggleBtnText) toggleBtnText.innerText = "SHOW MORE";
       }
     });
 
