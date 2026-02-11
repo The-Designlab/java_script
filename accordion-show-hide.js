@@ -2,6 +2,7 @@ addEventListener("DOMContentLoaded", () => {
 
 // 1. Select all card containers
 const cards = document.querySelectorAll(".job-card_body");
+const cards = document.querySelectorAll(".job-card");
 
 // 2. Loop through each card to create a unique scope
 cards.forEach((card) => {
