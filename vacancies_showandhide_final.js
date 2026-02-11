@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
   jobcards.forEach((card) => {
     
     // SCOPED SELECTORS:
-    const toggleBtn = card.querySelector('#visibility-button');
+    const toggleBtn = card.querySelector(".visibility-button");
     
     const content = card.querySelector(".job-card_content"); 
     
-    const applyBtn = card.querySelector('#apply-btn');
+    const applyBtn = card.querySelector(".apply-btn");
 
     // SAFETY CHECK: Prevents crash if elements aren't found
     if (!toggleBtn || !content || !applyBtn) return;
