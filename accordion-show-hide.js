@@ -1,24 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
   
   // Select all card containers
-  const jobCards = document.querySelectorAll(".job-card");
+  const jobcards = document.querySelectorAll(".job-card");
 
-  jobCards.forEach((card) => {
+  jobcards.forEach((card) => {
     
-    // 1. Select elements
+    // SCOPED SELECTORS:
     const toggleBtn = card.querySelector(".visibility-button");
-    const content = card.querySelector(".job-card-content");
+    
+    // FIX: Changed underscore (_) to hyphen (-)
+    const content = card.querySelector(".job-card-content"); 
+    
     const applyBtn = card.querySelector(".apply-btn");
 
-    // Safety check
+    // SAFETY CHECK: Prevents crash if elements aren't found
     if (!toggleBtn || !content || !applyBtn) return;
 
-    // 2. Initial Setup
-    // We only need to hide the content height and the apply button now
+    const contentItems = content.children;
+
+    // Initial Setup
     gsap.set(content, { height: 0, overflow: "hidden" });
     gsap.set(applyBtn, { autoAlpha: 0 });
+    gsap.set(contentItems, { autoAlpha: 0, y: 20 });
 
-    // 3. Create Timeline
+    // Create Timeline
     const tl = gsap.timeline({ 
       paused: true, 
       reversed: true 
@@ -29,22 +34,29 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 0.6,
       ease: "power2.out"
     })
+    .to(contentItems, {
+      autoAlpha: 1,
+      y: 0,
+      duration: 0.4,
+      stagger: 0.1,
+      ease: "power2.out"
+    }, "<0.2")
     .to(applyBtn, {
       autoAlpha: 1,
       duration: 0.3
-    }, "<0.2"); // "<0.2" starts the fade 0.2s after the height animation begins
+    }, "<");
 
-    // 4. Interaction Logic
+    // Interaction Logic
     toggleBtn.addEventListener("click", () => {
       if (tl.reversed()) {
         tl.play();
         toggleBtn.innerText = "Show Less";
       } else {
         tl.reverse();
-        toggleBtn.innerText = "Show More";
+        toggleBtn.innerText = "Learn More";
       }
     });
 
-  });
+  }); // End forEach
 
-});
+}); // End DOMContentLoaded
