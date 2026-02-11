@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Make sure your Webflow class is named "Job Card"
   const jobcards = document.querySelectorAll(".job-card");
 
-  cards.forEach((card) => {
+  jobcards.forEach((card) => {
   
   // SCOPED SELECTORS:
   // We search only inside the current 'card' element
