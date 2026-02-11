@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
     // Wait 600ms (matching the 0.6s animation) before changing text
         setTimeout(() => {
-           toggleBtn.innerText = "Show More";
+           toggleBtn.innerText = "LEARN MORE";
         }, 600);
       }
     });
