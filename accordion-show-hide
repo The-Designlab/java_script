@@ -1,0 +1,45 @@
+addEventListener("DOMContentLoaded", () => {
+
+// 1. Select the elements
+const toggleBtn = document.querySelector("#visibility-button");
+const content = document.querySelector("#job-card-content");
+const applyBtn = document.querySelector("#apply-btn");
+
+// 2. Initial Setup
+// We use 'autoAlpha: 0' for the button. This sets opacity to 0 AND visibility to hidden.
+// This prevents users from accidentally clicking the invisible Apply button.
+gsap.set(content, { height: 0, overflow: "hidden" });
+gsap.set(applyBtn, { autoAlpha: 0 });
+
+// 3. Create the Timeline
+const tl = gsap.timeline({ 
+  paused: true, 
+  reversed: true 
+});
+
+// -- Step A: Grow the content
+tl.to(content, {
+  height: "auto",
+  duration: 0.5,
+  ease: "power2.out"
+})
+// -- Step B: Fade in the Apply button
+// The "<0.2" parameter tells GSAP to start this 0.2 seconds after the PREVIOUS animation starts.
+// This creates a nice overlap.
+.to(applyBtn, {
+  autoAlpha: 1,
+  duration: 0.3
+}, "<0.2"); 
+
+// 4. Interaction Logic
+toggleBtn.addEventListener("click", () => {
+  if (tl.reversed()) {
+    // Open State
+    tl.play();
+    toggleBtn.innerText = "Show Less";
+  } else {
+    // Closed State
+    tl.reverse();
+    toggleBtn.innerText = "Show More"; // Assuming you want it to revert
+  }
+});
