@@ -49,10 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtn.addEventListener("click", () => {
       if (tl.reversed()) {
         tl.play();
-        toggleBtn.btn-label = "SHOW LESS";
+        toggleBtn.innerText = "SHOW LESS";
       } else {
         tl.reverse();
-        toggleBtn.btn-label = "LEARN MORE";
+        toggleBtn.innerText = "LEARN MORE";
       }
     });
 
