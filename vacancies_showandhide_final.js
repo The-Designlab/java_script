@@ -56,8 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
         // Update only the text element, preserving the button's layout
     if(toggleBtnText) toggleBtnText.innerText = "SHOW LESS";
   } else {
-    tl.reverse();
-    if(toggleBtnText) toggleBtnText.innerText = "LEARN MORE";
+
+    // CLOSING: Delay text change
+        tl.reverse();
+        
+    // Wait 600ms (matching the 0.6s animation) before changing text
+        setTimeout(() => {
+           toggleBtn.innerText = "Show More";
+        }, 600);
       }
     });
 
