@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if(toggleBtnText) toggleBtnText.innerText = "SHOW LESS";
   } else {
     tl.reverse();
-    if(toggleBtnText) toggleBtnText.innerText = "SHOW MORE";
+    if(toggleBtnText) toggleBtnText.innerText = "LEARN MORE";
       }
     });
 
