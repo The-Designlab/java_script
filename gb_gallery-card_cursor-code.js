@@ -25,7 +25,7 @@ window.Webflow.push(function () {
 
     tl.to(image, { scale: 1.05, brightness: 0.5, duration: 0.6 }, 0)
       .to(paragraph, { yPercent: -100, autoAlpha: 0 }, 0)
-      .to(button, { yPercent: 0, autoAlpha: 1, ease: 'power1.out' }, 0);
+      .to(button, { yPercent: 0, autoAlpha: 1, ease: 'power1.out' }, >0.10);
 
     item.addEventListener('mouseenter', function () {
       tl.play();
