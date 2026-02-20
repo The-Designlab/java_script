@@ -20,7 +20,7 @@ window.Webflow.push(function () {
     const tl = gsap.timeline({
       paused: true,
       reversed: true,
-      defaults: { duration: 0.3, ease: 'power1.in' }
+      defaults: { duration: 0.3, ease: 'power1.out' }
     });
 
     tl.to(image, { scale: 1.05, brightness: 0.5, duration: 0.6 }, 0)
