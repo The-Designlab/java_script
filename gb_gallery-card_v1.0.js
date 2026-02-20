@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-const items = document.querySelectorAll(".product_item");
+const items = document.querySelectorAll(".project-listing_card");
 
 items.forEach(function (item, index) {
 
