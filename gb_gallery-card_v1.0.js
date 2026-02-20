@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 const items = document.querySelectorAll(".product_item");
 
 items.forEach(function (item, index) {
