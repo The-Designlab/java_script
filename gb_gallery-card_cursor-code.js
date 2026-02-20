@@ -5,7 +5,7 @@ window.Webflow.push(function () {
   const items = document.querySelectorAll('.project_listing');
 
   items.forEach(function (item) {
-    const image = item.querySelector('.gallery-image');
+    const image = item.querySelector('#card-image');
     // CHANGE this to match your real class exactly:
     const paragraph = item.querySelector('.paragraph_wrapper'); // or '.paragraph_wrapper'
     const button = item.querySelector('.card-button_wrapper');  // or '.card-button-wrapper'
