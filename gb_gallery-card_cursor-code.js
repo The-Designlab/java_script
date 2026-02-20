@@ -2,12 +2,12 @@
 
 window.Webflow = window.Webflow || [];
 window.Webflow.push(function () {
-  const items = document.querySelectorAll('.project-listing_item');
+  const items = document.querySelectorAll('.project_listing');
 
   items.forEach(function (item) {
     const image = item.querySelector('.gallery-image');
     // CHANGE this to match your real class exactly:
-    const paragraph = item.querySelector('.paragraph-wrapper'); // or '.paragraph_wrapper'
+    const paragraph = item.querySelector('.paragraph_wrapper'); // or '.paragraph_wrapper'
     const button = item.querySelector('.card-button_wrapper');  // or '.card-button-wrapper'
 
     if (!image || !paragraph || !button) return; // avoid errors if structure changes
