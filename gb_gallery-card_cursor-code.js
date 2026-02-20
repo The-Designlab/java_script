@@ -15,7 +15,7 @@ window.Webflow.push(function () {
     // Initial states
     gsap.set(image, { scale: 1 });
     gsap.set(paragraph, { yPercent: 0, autoAlpha: 1 });
-    gsap.set(button, { autoAlpha: 0 });
+    gsap.set(button, { autoAlpha: 0, yPercent: 50 });
 
     const tl = gsap.timeline({
       paused: true,
@@ -23,9 +23,9 @@ window.Webflow.push(function () {
       defaults: { duration: 0.3, ease: 'power1.in' }
     });
 
-    tl.to(image, { scale: 1.05, brightness: 0.7, duration: 0.6 }, 0)
+    tl.to(image, { scale: 1.05, brightness: 0.5, duration: 0.6 }, 0)
       .to(paragraph, { yPercent: -100, autoAlpha: 0 }, 0)
-      .to(button, { yPercent: -50, autoAlpha: 1, ease: 'power1.out' }, 0);
+      .to(button, { yPercent: 0, autoAlpha: 1, ease: 'power1.out' }, 0);
 
     item.addEventListener('mouseenter', function () {
       tl.play();
