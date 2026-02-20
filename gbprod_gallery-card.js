@@ -27,11 +27,23 @@ window.Webflow.push(function () {
       .to(paragraph, { yPercent: -100, autoAlpha: 0 }, 0)
       .to(button, { yPercent: 0, autoAlpha: 1, ease: 'power1.out' }, 0.1);
 
+    // Desktop: mouse events
     item.addEventListener('mouseenter', function () {
       tl.play();
     });
 
     item.addEventListener('mouseleave', function () {
+      tl.reverse();
+    });
+
+    // Touch devices: touch events
+    item.addEventListener('touchstart', function (e) {
+      e.preventDefault(); // Prevent default touch behavior
+      tl.play();
+    });
+
+    item.addEventListener('touchend', function (e) {
+      e.preventDefault();
       tl.reverse();
     });
   });
