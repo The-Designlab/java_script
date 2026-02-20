@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-const items = document.querySelectorAll(".project-listing_card");
+const items = document.querySelectorAll(".project-listing_item");
 
 items.forEach(function (item, index) {
 
@@ -12,14 +12,14 @@ items.forEach(function (item, index) {
       ease: 'ease.out'
     })
 
-    .to(item.querySelector("#paragraph_wrapper"), {
+    .to(item.querySelector(".paragraph_wrapper"), {
       duration: .3,
       y: '-100%',
       ease: 'ease.out',
       opacity: '0'
     }, "-=0.2")
 
-    .from(item.querySelector("#gallery-button"), {
+    .from(item.querySelector(".card-button_wrapper"), {
       duration: .3,
       y: '100%',
       ease: 'ease.out',
