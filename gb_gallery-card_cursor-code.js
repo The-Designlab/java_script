@@ -7,7 +7,7 @@ window.Webflow.push(function () {
   items.forEach(function (item) {
     const image = item.querySelector('#card-image');
     // CHANGE this to match your real class exactly:
-    const paragraph = item.querySelector('.paragraph_wrapper'); // or '.paragraph_wrapper'
+    const paragraph = item.querySelector('#paragraph_text'); // or '.paragraph_wrapper'
     const button = item.querySelector('.card-button_wrapper');  // or '.card-button-wrapper'
 
     if (!image || !paragraph || !button) return; // avoid errors if structure changes
@@ -20,12 +20,12 @@ window.Webflow.push(function () {
     const tl = gsap.timeline({
       paused: true,
       reversed: true,
-      defaults: { duration: 0.4, ease: 'power3.out' }
+      defaults: { duration: 0.3, ease: 'power1.in' }
     });
 
-    tl.to(image, { scale: 1.1 }, 0)
+    tl.to(image, { scale: 1.05, duration: 0.6 }, 0)
       .to(paragraph, { yPercent: -100, autoAlpha: 0 }, 0)
-      .to(button, { autoAlpha: 1 }, 0);
+      .to(button, { yPercent: -50, autoAlpha: 1, ease: 'power1.out' }, 0);
 
     item.addEventListener('mouseenter', function () {
       tl.play();
