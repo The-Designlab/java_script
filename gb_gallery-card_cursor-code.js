@@ -1,40 +1,38 @@
-// Make sure GSAP is loaded on the page first
-document.addEventListener("DOMContentLoaded", () => {
+// hover-effects.js (example name on jsDelivr)
 
-gsap.utils.toArray(".project-listing_item").forEach((item) => {
-  const image    = item.querySelector(".gallery-image");
-  const paragraph = item.querySelector(".paragraph-wrapper"); // or ".paragraph_wrapper"
-  const button   = item.querySelector(".card-button_wrapper");
+window.Webflow = window.Webflow || [];
+window.Webflow.push(function () {
+  const items = document.querySelectorAll('.project-listing_item');
 
-  // Optional: set initial states (can also be done in CSS)
-  gsap.set(button,   { autoAlpha: 0 });   // hidden
-  gsap.set(paragraph, { yPercent: 0, autoAlpha: 1 });
-  gsap.set(image,    { scale: 1 });
+  items.forEach(function (item) {
+    const image = item.querySelector('.gallery-image');
+    // CHANGE this to match your real class exactly:
+    const paragraph = item.querySelector('.paragraph-wrapper'); // or '.paragraph_wrapper'
+    const button = item.querySelector('.card-button_wrapper');  // or '.card-button-wrapper'
 
-  const tl = gsap.timeline({ paused: true, reversed: true });
+    if (!image || !paragraph || !button) return; // avoid errors if structure changes
 
-  tl.to(image, {
-    scale: 1.1,          // "enlarge" the image
-    duration: 0.4,
-    ease: "power3.out"
-  }, 0)
-  .to(paragraph, {
-    yPercent: -100,      // move up by 100%
-    autoAlpha: 0,        // fade out to 0 opacity
-    duration: 0.4,
-    ease: "power3.out"
-  }, 0)
-  .to(button, {
-    autoAlpha: 1,        // fade in / show button wrapper
-    duration: 0.4,
-    ease: "power3.out"
-  }, 0);
+    // Initial states
+    gsap.set(image, { scale: 1 });
+    gsap.set(paragraph, { yPercent: 0, autoAlpha: 1 });
+    gsap.set(button, { autoAlpha: 0 });
 
-  item.addEventListener("mouseenter", () => {
-    tl.play();
-  });
+    const tl = gsap.timeline({
+      paused: true,
+      reversed: true,
+      defaults: { duration: 0.4, ease: 'power3.out' }
+    });
 
-  item.addEventListener("mouseleave", () => {
-    tl.reverse();
+    tl.to(image, { scale: 1.1 }, 0)
+      .to(paragraph, { yPercent: -100, autoAlpha: 0 }, 0)
+      .to(button, { autoAlpha: 1 }, 0);
+
+    item.addEventListener('mouseenter', function () {
+      tl.play();
+    });
+
+    item.addEventListener('mouseleave', function () {
+      tl.reverse();
+    });
   });
 });
