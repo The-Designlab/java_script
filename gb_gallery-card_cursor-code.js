@@ -1,4 +1,5 @@
 // Make sure GSAP is loaded on the page first
+document.addEventListener("DOMContentLoaded", () => {
 
 gsap.utils.toArray(".project-listing_item").forEach((item) => {
   const image    = item.querySelector(".gallery-image");
