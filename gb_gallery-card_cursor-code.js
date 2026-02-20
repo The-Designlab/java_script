@@ -15,7 +15,7 @@ window.Webflow.push(function () {
     // Initial states
     gsap.set(image, { scale: 1 });
     gsap.set(paragraph, { yPercent: 0, autoAlpha: 1 });
-    gsap.set(button, { autoAlpha: 0, yPercent: 50 });
+    gsap.set(button, { autoAlpha: 0, yPercent: 150 });
 
     const tl = gsap.timeline({
       paused: true,
