@@ -163,7 +163,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (workBackBtn) {
         // QA Fix: Targetting the single, standardized label
         workBackBtn.addEventListener("click", function () {
-            gsap.delayedCall(0.5, () => {
             tl.play("nav-loaded");
         });
     }
