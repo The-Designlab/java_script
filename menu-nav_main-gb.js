@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.querySelector(".close-menu_btn");
     const workBtn = document.querySelector('#work-with-us_btn');
     const workBackBtn = document.querySelector('#work-back_btn');
-    const subnavItem = document.querySelector('#sub-nav_item');
-
+  /*  const subnavItem = document.querySelector('#sub-nav_item');
+*/
     // Set GSAP defaults
     gsap.defaults({ duration: 0.3, ease: 'power1.out' });
 
