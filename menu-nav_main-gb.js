@@ -38,11 +38,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (workBtn) workBtn.addEventListener("click", () => tl.play("work-with"));
 
-    if (workBackBtn) {
-        workBackBtn.addEventListener("click", () => {
-            // Added 0.5s delay before reversing the submenu
-            gsap.delayedCall(3, () => {
-                tl.tweenTo("nav-loaded");
+let backDelay; // Global reference to the delay
+
+if (workBackBtn) {
+    workBackBtn.addEventListener("click", () => {
+        // 1. Kill any existing delay to prevent "double-jumping"
+        if (backDelay) backDelay.kill();
+
+        // 2. Create the delayed action
+        backDelay = gsap.delayedCall(0.5, () => {
+            // 3. Use tweenTo to go BACKWARDS to the main nav label
+            tl.tweenTo("nav-loaded");
             });
         });
     }
