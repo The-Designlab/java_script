@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // QA Fix: Removed .75 argument. Assuming this element also closes the main nav.
-    if (subnavItem) {
+/*    if (subnavItem) {
         subnavItem.addEventListener("click", function () {
             tl.pause(0);
         });
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
             tl.play("expertise");
         });
     }
-
+*/
     // Back to Main Nav from Expertise
     if (expertiseBackBtn) {
         // QA Fix: Targetting the single, standardized label
