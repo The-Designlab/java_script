@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (workBackBtn) {
         workBackBtn.addEventListener("click", () => {
             // Added 0.5s delay before reversing the submenu
-            gsap.delayedCall(0.5, () => {
+            gsap.delayedCall(3, () => {
                 tl.reverse("work-with");
             });
         });
