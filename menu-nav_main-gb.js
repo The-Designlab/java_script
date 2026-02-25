@@ -1,55 +1,319 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Element selection (QA Check: Ensure these selectors exist in your HTML)
+
     const openBtn = document.querySelector(".open-menu_btn");
+
     const closeBtn = document.querySelector(".close-menu_btn");
+
     const workBtn = document.querySelector('#work-with-us_btn');
+
     const workBackBtn = document.querySelector('#work-back_btn');
-    
+
+  /*  const subnavItem = document.querySelector('#sub-nav_item');
+
+*/
+
     // Set GSAP defaults
-    gsap.defaults({ duration: 0.4, ease: 'power2.out' });
+
+    gsap.defaults({ duration: 0.3, ease: 'power1.out' });
+
+
+
+    // 2. Timeline Definition
 
     const tl = gsap.timeline({ paused: true });
 
-    // 1. Open Menu Animation
-    tl.to(".nav-logo_wrapper", { yPercent: -100 })
-      .to(".open-menu_btn", { yPercent: -100 }, "<")
-      .from(".close-menu_btn", { yPercent: 100, autoAlpha: 0 }, "<")
-      .from(".black_mask", { duration: 0.8, opacity: 0 }, "<")
-      
-      .addLabel("nav-loaded") 
-      .from(['#about-us_btn', '#how-we-work_btn', '#gallery_btn', '#work-with-us_btn', '#contact_btn'], {
-          opacity: 0,
-          y: 10,
-          stagger: 0.05
-      })
-      .addPause() 
-
-    // 2. Submenu Animation
-      .addLabel("work-with")
-      .to(".main-nav__block", { xPercent: -20, autoAlpha: 0 })
-      .from(".sub-nav__block", { xPercent: 50, autoAlpha: 0 }, "<")
-      .addPause();
 
 
-    // Event Listeners
-    if (openBtn) openBtn.addEventListener("click", () => tl.play("nav-loaded"));
+    // --- Menu Open Animation ---
+
+
+
+    tl.to(".nav-logo_wrapper", {
+
+        yPercent: -100,
+
+        duration: 0.2
+
+    })
+
+
+
+    // Burger animation (Open to Close)
+
+    .to(".open-menu_btn", {
+
+        duration: 0.2,
+
+        yPercent: -100,
+
+        ease: 'power4.out'
+
+    }, "<") // Start with the logo movement
+
+
+
+    // Burger animation (Close appears)
+
+    .from(".close-menu_btn", {
+
+        duration: 0.2,
+
+        yPercent: 100,
+
+        ease: 'power4.out',
+
+        autoAlpha: 0
+
+    }, "<") // Start with the logo movement
+
+
+
+    .from(".black_mask", {
+
+        duration: 1,
+
+        opacity: 0,
+
+        ease: 'power1.out'
+
+    }, "<") // Start with the logo movement
+
+
+
+    // 1st level-nav items staggered load
+
+    .addLabel("nav-loaded") // QA Fix: Standardized to a single label
+
+
+
+    .from('#about-us_btn', {
+
+        /*
+
+        xPercent: -50,
+
+        */
+
+        opacity: 0
+
+    })
+
+
+
+    .from('#how-we-work_btn', {
+
+        opacity: 0
+
+    }, ">0.1") // QA Suggestion: Consistent, easy-to-read offset
+
+
+
+    .from('#gallery_btn', {
+
+        opacity: 0
+
+    }, ">0.1")
+
+
+
+    .from('#work-with-us_btn', {
+
+        opacity: 0
+
+    }, ">0.1")
+
+
+
+    .from('#contact_btn', {
+
+        opacity: 0
+
+    }, ">0.1")
+
+
+
+    .addPause()
+
+
+
+/*    // --- Subnav (Expertise) Animation ---
+
+
+
+    .addLabel("expertise")
+
+
+
+    .to(".main-nav_block", {
+
+        duration: .3,
+
+        xPercent: -80,
+
+        ease: 'ease.out',
+
+        autoAlpha: 0
+
+    })
+
+
+
+    .from(".exp-nav-btn__list", {
+
+        duration: .3,
+
+        xPercent: -80,
+
+        ease: 'ease.out',
+
+        autoAlpha: 0
+
+    }, "-=0.2")
+
+
+
+    .addPause()
+
+*/
+
+        
+
+    // --- Subnav (Work with) Animation ---
+
+
+
+    .addLabel("work-with")
+
+
+
+/*    // QA Fix: Ensure duration is 0 for immediate hiding, prevents unclickable state
+
+    .to(".exp-nav-btn__list", {
+
+        duration: 0,
+
+        visibility: "hidden" 
+
+    }) 
+
+*/
+
+    .to(".main-nav__block", {
+
+        xPercent: -80,
+
+        ease: 'ease.out',
+
+        autoAlpha: 0
+
+    })
+
+
+
+    .from(".sub-nav__block", {
+
+        xPercent: -80,
+
+        ease: 'ease.out',
+
+        opacity: 0
+
+    }, "-=0.2")
+
+
+
+    .addPause();
+
+
+
+
+
+    // 3. Event Listeners (QA Check: Added null checks for robustness)
+
     
-    // Reverse the whole thing to close
-    if (closeBtn) closeBtn.addEventListener("click", () => tl.reverse(0));
 
-    if (workBtn) workBtn.addEventListener("click", () => tl.play("work-with"));
+    // Main Menu Open/Close
 
-let backDelay; // Global reference to the delay
+    if (openBtn) {
 
-if (workBackBtn) {
-    workBackBtn.addEventListener("click", () => {
-        // 1. Kill any existing delay to prevent "double-jumping"
-        if (backDelay) backDelay.kill();
+        openBtn.addEventListener("click", function () {
 
-        // 2. Create the delayed action
-        backDelay = gsap.delayedCall(0.5, () => {
-            // 3. Use tweenTo to go BACKWARDS to the main nav label
-            tl.tweenTo("nav-loaded");
-            });
+            tl.play(0);
+
         });
+
     }
-});
+
+
+
+    // QA Fix: Removed .75 argument. Reversing should go back to the absolute start (closed state).
+
+    if (closeBtn) {
+
+        closeBtn.addEventListener("click", function () {
+
+            tl.pause(0);
+
+        });
+
+    }
+
+
+
+    // QA Fix: Removed .75 argument. Assuming this element also closes the main nav.
+
+/*    if (subnavItem) {
+
+        subnavItem.addEventListener("click", function () {
+
+            tl.pause(0);
+
+        });
+
+    }
+
+/*
+
+    // Expertise Sub-Menu
+
+    if (expertiseBtn) {
+
+        expertiseBtn.addEventListener("click", function () {
+
+            tl.play("expertise");
+
+        });
+
+    }
+
+*/
+
+    // Back to Main Nav from Expertise
+
+    if (expertiseBackBtn) {
+
+        // QA Fix: Targetting the single, standardized label
+
+        expertiseBackBtn.addEventListener("click", function () {
+
+            tl.play("nav-loaded");
+
+        });
+
+    }
+
+*/
+
+    // Work With Us Sub-Menu
+
+    if (workBtn) {
+
+        workBtn.addEventListener("click", function () {
+
+            tl.play("work-with");
+
+        });
+
+    }
