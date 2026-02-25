@@ -8,7 +8,7 @@ window.Webflow.push(function () {
     const image = item.querySelector('#card-image');
     // CHANGE this to match your real class exactly:
     const paragraph = item.querySelector('#paragraph_text'); // or '.paragraph_wrapper'
-    const button = item.querySelector('.btn_wrapper');  // or '.card-button-wrapper'
+    const button = item.querySelector('.btn_no-link');  // or '.card-button-wrapper'
 
     if (!image || !paragraph || !button) return; // avoid errors if structure changes
 
