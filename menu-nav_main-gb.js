@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         workBackBtn.addEventListener("click", () => {
             // Added 0.5s delay before reversing the submenu
             gsap.delayedCall(3, () => {
-                tl.reverse("work-with");
+                tl.tweenTo("nav-loaded");
             });
         });
     }
