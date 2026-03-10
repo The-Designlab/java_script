@@ -58,7 +58,7 @@ window.Webflow.push(function () {
 
     // Desktop: mouse events
 
-    item.addEventListener('mouseenter', function () {
+    item.addEventListener('mouseover', function () {
 
       tl.play();
 
