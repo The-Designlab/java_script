@@ -49,7 +49,7 @@ tl.to(image, { scale: 1.05, duration: 0.6 }, 0)
   }, 0.1);
 
     // Desktop: mouse events
-    item.addEventListener('mouseenter', function () {
+    item.addEventListener('mouseover', function () {
       tl.play();
     });
 
