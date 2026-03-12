@@ -1,5 +1,6 @@
+# honeypot-form_trap.js
+
 # Webflow Bot-Proof Honeypot Component
-honeypot-form_trap.js
 
 A lightweight, accessible, and UX-friendly alternative to reCAPTCHA for Webflow forms. This component uses a self-contained "honeypot" method to trap and block spam bots without forcing human users to solve puzzles.
 
