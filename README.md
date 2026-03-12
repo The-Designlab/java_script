@@ -1,8 +1,6 @@
-# honeypot-form_trap.js
+# honeypot-form_trap.js - v1.2
 
-Here is the updated `README.md` file, complete with the autofill protections. I have updated the default ID to `website-url` as the new baseline best practice for your agency, as it provides that extra layer of "belt and suspenders" security against password managers.
-
-You can copy and paste this directly into your GitHub repository to overwrite the previous version.
+I have updated the default ID to `website-url` as the new baseline best practice for your agency, as it provides that extra layer of "belt and suspenders" security against password managers.
 
 ---
 
