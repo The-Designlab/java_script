@@ -32,7 +32,7 @@ addEventListener("DOMContentLoaded", () => {
   });
 
   item.addEventListener("mouseleave", () => {
-    tl.reverse().timescale(2);
+    tl.reverse().timeScale(2);
   });
 
 });
