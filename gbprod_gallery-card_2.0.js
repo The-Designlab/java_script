@@ -8,9 +8,9 @@ window.Webflow.push(function () {
     const image = item.querySelector("#card-image");
     const paragraph = item.querySelector("#paragraph_text");
     const button = item.querySelector(".btn");
-    const link = item.querySelector("a[href]"); // CMS link inside the card
+    /*const link = item.querySelector("a[href]"); // CMS link inside the card*/
 
-    if (!image || !paragraph || !button || !link) return;
+    if (!image || !paragraph || !button /*|| !link*/) return;
 
     // Initial states
     gsap.set(image, { scale: 1 });
