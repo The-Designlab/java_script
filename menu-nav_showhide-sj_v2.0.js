@@ -13,7 +13,7 @@ addEventListener("DOMContentLoaded", () => {
 
   tl
     .to(".nav-logo_wrapper", {
-      backgroundColor: "var(--colors--accent, 0.8)",
+      backgroundColor: "rgba(253,195,0,0.8)",
     })
     // QA FIX: target multiple elements in one tween
     /*.to(["#burger-open", "#burger-label"], {
