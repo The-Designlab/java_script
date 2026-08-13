@@ -1,9 +1,9 @@
 (function () {
-  const root = document.querySelector('[data-component="form-panel"]');
+  const root = document.querySelector('[data-component="info-panel"]');
   if (!root) return;
 
-  const panel = root.querySelector('[data-form-panel-panel]');
-  const openTriggers = document.querySelectorAll('[data-form-panel-open]');
+  const panel = root.querySelector('[data-info-panel-panel]');
+  const openTriggers = document.querySelectorAll('[data-info-panel-open]');
 
   // Content to lock — must NOT contain the panel
   const mainContent =
@@ -84,7 +84,7 @@
     lockScroll();
 
     requestAnimationFrame(() => {
-      const closeBtn = root.querySelector('[data-form-panel-close]');
+      const closeBtn = root.querySelector('[data-info-panel-close]');
       const firstField = panel.querySelector(
         'input:not([type="hidden"]), textarea, select'
       );
@@ -125,8 +125,8 @@
   // Close — button, icon inside button, or backdrop
   root.addEventListener('click', (e) => {
     if (
-      e.target.closest('[data-form-panel-close]') ||
-      e.target.closest('[data-form-panel-backdrop]')
+      e.target.closest('[data-info-panel-close]') ||
+      e.target.closest('[data-info-panel-backdrop]')
     ) {
       e.preventDefault();
       closePanel();
