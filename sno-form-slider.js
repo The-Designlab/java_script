@@ -1,4 +1,3 @@
-<script>
 (function () {
   const root = document.querySelector('[data-component="form-panel"]');
   if (!root) return;
@@ -134,4 +133,3 @@
     }
   });
 })();
-</script>
