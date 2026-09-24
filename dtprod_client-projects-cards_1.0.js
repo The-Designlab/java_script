@@ -1,6 +1,6 @@
 // timeline mouse enter and leave tween (image fade out, text reveal in) fixed to work with multiple objects using the same class of ".article-card_wrapper" to fire individually using one piece of code//
 
-const items = document.querySelectorAll(".environment-card_container");
+const items = document.querySelectorAll(".environment-card__grid");
 gsap.defaults({ defaults: { ease: 'Expo.easeInOut', duration: .2 } });
 
 items.forEach(function (item, index) {
