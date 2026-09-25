@@ -25,25 +25,26 @@ items.forEach(function (item) {
 */
 
 // timeline for product-cat__container
-
-const item = document.querySelector(".what-we-inside_wrapper")
+(() => {
+const item = document.querySelector(".what-we-inside_wrapper");
+  if (!item || typeof gsap === "undefined") return;
 
 const tl = gsap.timeline({ paused: true })
 
   .from('#interior-image', {
     duration: .4,
     align: "right right",
-    width: '100%',
+    width: "100%",
     height: "100%",
     right: 0,
-    ease: 'ease.in'
+    ease: "power2.in"
   })
 
   .to('#interior-intro', {
     duration: .2,
-    y: '-50%',
-    ease: 'ease.out',
-    opacity: '0'
+    y: "-50%",
+    ease: "power2.out",
+    opacity: 0
   }, "-=0.3")
 
   /*
@@ -59,14 +60,14 @@ const tl = gsap.timeline({ paused: true })
   .from('#kitchens', {
     duration: .3,
     y: '50%',
-    ease: 'ease.out',
+    ease: "power2.out",
     opacity: '0'
   }, "-=0.2")
 
   .from('#dressing', {
     duration: .3,
     y: '50%',
-    ease: 'ease.out',
+    ease: "power2.out",
     opacity: '0'
   }, "-=0.2")
 
@@ -74,57 +75,54 @@ const tl = gsap.timeline({ paused: true })
     duration: .2,
     delay: '0',
     y: '50%',
-    ease: 'ease.out',
+    ease: "power2.out",
     opacity: '0'
   })
 
   .from('#bootrooms', {
     duration: .3,
     y: '50%',
-    ease: 'ease.out',
+    ease: "power2.out",
     opacity: '0'
   }, "-=0.2")
 
   .from('#media', {
     duration: .3,
     y: '50%',
-    ease: 'ease.out',
+    ease: "power2.out",
     opacity: '0'
   }, "-=0.2")
 
   .from('#interior-doors', {
     duration: .3,
     y: '50%',
-    ease: 'ease.out',
+    ease: "power2.out",
     opacity: '0'
   } /*, "+=0.5"*/ )
 
   .from('#staircases', {
     duration: .3,
     y: '50%',
-    ease: 'ease.out',
+    ease: "power2.out",
     opacity: '0'
   }, "-=0.2")
 
   .from('#mouldings', {
     duration: .3,
     y: '50%',
-    ease: 'ease.out',
+    ease: "power2.out",
     opacity: '0'
   }, "-=0.2")
 
   .from('.int-btn_wrapper', {
     duration: .3,
     y: '50%',
-    ease: 'ease.out',
+    ease: "power2.out",
     opacity: '0'
-  })
+  });
 
 /*.to('#category-title', {duration: .2, ease: 'power3.in'})*/
 
-item.addEventListener("mouseenter", function () {
-  tl.play()
-})
-item.addEventListener("mouseleave", function () {
-  tl.reverse()
-})
+item.addEventListener("mouseenter", () => tl.play());
+  item.addEventListener("mouseleave", () => tl.reverse());
+})();
