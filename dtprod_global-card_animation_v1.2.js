@@ -11,9 +11,9 @@
     const button = item.querySelector('.btn');
     if (!image || !body) return;
     const hoverColors = {
-  Blue: 'var(--_color---primary--blue)',
-  White: 'var(--_color---neutral--white)',
-  Accent: 'var(--colors--primary-accent)',
+  blue: 'var(--_color---primary--blue)',
+  white: 'var(--_color---neutral--white)',
+  accent: 'var(--colors--primary-accent)',
 };
 
 const choice = (item.getAttribute('data-hover-color') || '').trim().toLowerCase();
