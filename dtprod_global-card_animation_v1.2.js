@@ -16,7 +16,8 @@
   accent: 'var(--colors--primary-accent)',
 };
 
-const choice = (item.getAttribute('data-hover-color') || '').trim().toLowerCase();
+const choice = (item.getAttribute('data-hover-color') || '').trim().toLowerCase()
+if (choice === "none") return;
 const hoverColor = hoverColors[choice] || 'var(--_color---primary--blue)';
     const colorTargets = [category, body, button].filter(Boolean);
     const tl = gsap.timeline({
