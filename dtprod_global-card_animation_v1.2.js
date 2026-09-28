@@ -10,7 +10,14 @@
     const body = item.querySelector('.card-body_text');
     const button = item.querySelector('.btn');
     if (!image || !body) return;
-    const hoverColor = item.getAttribute('data-hover-color') || 'var(--_color---primary--blue)';
+    const hoverColors = {
+  Blue: 'var(--_color---primary--blue)',
+  White: 'var(--_color---neutral--white)',
+  Accent: 'var(--colors--primary-accent)',
+};
+
+const choice = item.getAttribute('data-hover-color');
+const hoverColor = hoverColors[choice] || 'var(--_color---primary--blue)';
     const colorTargets = [category, body, button].filter(Boolean);
     const tl = gsap.timeline({
       paused: true,
