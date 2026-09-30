@@ -3,7 +3,7 @@
   if (!items.length || typeof gsap === 'undefined') return;
 
   items.forEach((item) => {
-    const image = item.querySelector('#image-default');
+    const image = item.querySelector('.team-member_image-default');
     if (!image) return;
 
     const tween = gsap.to(image, {
