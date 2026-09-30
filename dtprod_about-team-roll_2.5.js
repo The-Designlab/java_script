@@ -8,11 +8,12 @@
 
     const tween = gsap.to(image, {
       autoAlpha: 0,
-      duration: 0.3,
+      duration: 0.15,
+      ease: 'power2.out',
       paused: true,
     });
 
-    item.addEventListener('mouseenter', () => tween.play());
-    item.addEventListener('mouseleave', () => tween.reverse());
+    item.addEventListener('mouseenter', () => tween.timescale(1).play());
+    item.addEventListener('mouseleave', () => tween.timescale(0.5).reverse());
   });
 })();
