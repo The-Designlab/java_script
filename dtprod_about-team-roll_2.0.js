@@ -1,16 +1,18 @@
-const items = document.querySelectorAll(".team-member_wrapper");
-items.forEach(function (item, index) {
+(() => {
+  const items = document.querySelectorAll('.team-member_wrapper');
+  if (!items.length || typeof gsap === 'undefined') return;
 
-  const tween = gsap.to(item.querySelector('#image-default'), {
-    visibility: 'hidden',
-    paused: true
-  });
+  items.forEach((item) => {
+    const image = item.querySelector('#image-default');
+    if (!image) return;
 
-  item.addEventListener("mouseenter", function () {
-    tween.play();
-  });
+    const tween = gsap.to(image, {
+      autoAlpha: 0,
+      duration: 0.3,
+      paused: true,
+    });
 
-  item.addEventListener("mouseleave", function () {
-    tween.reverse();
+    item.addEventListener('mouseenter', () => tween.play());
+    item.addEventListener('mouseleave', () => tween.reverse());
   });
-});
+})();
