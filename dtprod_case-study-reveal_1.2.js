@@ -22,7 +22,7 @@
       if (closeBtn && closeBtn.contains(e.target)) return;
       tl.play();
     });
-    item.addEventListener('mouseleave', () => tl.reverse());
+   // item.addEventListener('mouseleave', () => tl.reverse());
 
     closeBtn?.addEventListener('click', (e) => {
       e.preventDefault();
