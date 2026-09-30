@@ -13,7 +13,7 @@
       paused: true,
     });
 
-    item.addEventListener('mouseenter', () => tween.timescale(1).play());
-    item.addEventListener('mouseleave', () => tween.timescale(0.5).reverse());
+    item.addEventListener('mouseenter', () => tween.timeScale(1).play());
+    item.addEventListener('mouseleave', () => tween.timeScale(0.5).reverse());
   });
 })();
