@@ -8,7 +8,7 @@
 
     const tween = gsap.to(image, {
       autoAlpha: 0,
-      duration: 0.15,
+      duration: 0.05,
       ease: 'power2.out',
       paused: true,
     });
