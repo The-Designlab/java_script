@@ -19,7 +19,8 @@
 const choice = (item.getAttribute('data-hover-color') || '').trim().toLowerCase()
 if (choice === "none") return;
 const hoverColor = hoverColors[choice] || 'var(--_color---primary--blue)';
-    const colorTargets = [category, body, button].filter(Boolean);
+    const hideButton = (item.getAttribute('data-hide-btn') || '').trim().toLowerCase() === 'true';
+    const colorTargets = [category, body, hideButton ? null : button].filter(Boolean);
     const tl = gsap.timeline({
       paused: true,
       defaults: { duration: 0.3, ease: 'power3.in' },
@@ -35,6 +36,12 @@ const hoverColor = hoverColors[choice] || 'var(--_color---primary--blue)';
     tl.to(colorTargets, {
       color: hoverColor,
     }, '<');
+
+    if (hideButton && button) {
+      tl.to(button, {
+        autoAlpha: 0,
+      }, '<');
+    }
     item.addEventListener('mouseenter', () => tl.play());
     item.addEventListener('mouseleave', () => tl.reverse());
   });
